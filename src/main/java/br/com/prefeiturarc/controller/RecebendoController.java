@@ -6,6 +6,7 @@
 package br.com.prefeiturarc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  *
@@ -13,5 +14,10 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class RecebendoController {
-    
+
+    @RequestMapping("/recebendo/novo")
+    public String novo() {
+        return "recebendo/CadastroRecebendo";
+    }
+
 }
