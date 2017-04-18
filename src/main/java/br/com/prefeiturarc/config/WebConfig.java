@@ -14,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.spring4.SpringTemplateEngine;
@@ -30,9 +31,9 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 @ComponentScan(basePackageClasses = {RecebendoController.class})
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
-    
+
     private ApplicationContext ac;
-    
+
     private ITemplateResolver templateResolver() {
         SpringResourceTemplateResolver resolver = new SpringResourceTemplateResolver();
         resolver.setApplicationContext(ac);
@@ -41,7 +42,7 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         resolver.setTemplateMode(TemplateMode.HTML);
         return resolver;
     }
-    
+
     @Bean
     public TemplateEngine templateEngine() {
         SpringTemplateEngine engine = new SpringTemplateEngine();
@@ -49,7 +50,7 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         engine.setTemplateResolver(templateResolver());
         return engine;
     }
-    
+
     @Bean
     public ViewResolver viewResolver() {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
@@ -57,10 +58,15 @@ public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationCon
         resolver.setCharacterEncoding("UTF-8");
         return resolver;
     }
-    
+
     @Override
     public void setApplicationContext(ApplicationContext ac) throws BeansException {
         this.ac = ac;
     }
-    
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry handlerRegistry) {
+        handlerRegistry.addResourceHandler("/**").addResourceLocations("classpath:/macadmin/theme/");
+    }
+
 }
