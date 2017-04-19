@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta charset="ISO-8859-1">
+        <!-- Title and other stuffs -->
+        <title>ERP Habitação</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="">
+
+
+        <!-- Stylesheets -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <!-- Font awesome icon -->
+        <link rel="stylesheet" href="../css/font-awesome.min.css"> 
+        <!-- jQuery UI -->
+        <link rel="stylesheet" href="../css/jquery-ui.css"> 
+        <!-- Calendar -->
+        <link rel="stylesheet" href="../css/fullcalendar.css">
+        <!-- prettyPhoto -->
+        <link rel="stylesheet" href="../css/prettyPhoto.css">  
+        <!-- Star rating -->
+        <link rel="stylesheet" href="../css/rateit.css">
+        <!-- Date picker -->
+        <link rel="stylesheet" href="../css/bootstrap-datetimepicker.min.css">
+        <!-- CLEditor -->
+        <link rel="stylesheet" href="../css/jquery.cleditor.css"> 
+        <!-- Data tables -->
+        <link rel="stylesheet" href="../css/jquery.dataTables.css"> 
+        <!-- Bootstrap toggle -->
+        <link rel="stylesheet" href="../css/jquery.onoff.css">
+        <!-- Main stylesheet -->
+        <link href="../css/style.css" rel="stylesheet">
+        <!-- Widgets stylesheet -->
+        <link href="../css/widgets.css" rel="stylesheet">   
+
+        <script src="../js/respond.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <![endif]-->
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="../img/favicon/favicon.png">
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-fixed-top bs-docs-nav" role="banner">
+
+            <div class="conjtainer">
+                <!-- Menu button for smallar screens -->
+                <div class="navbar-header">
+                    <button class="navbar-toggle btn-navbar" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span>Menu</span>
+                    </button>
+                    <!-- Site name for smallar screens -->
+                    <a href="index.html" class="navbar-brand hidden-lg">ERP Habitação</a>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <!-- Logo. -->
+                        <div class="logo">
+                            <h1><a href="#">&nbsp;&nbsp;ERP<span class="bold">Habitação</span></a></h1>
+                        </div>
+
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Navigation starts -->
+                        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">       
+
+                            <!-- Links -->
+                            <ul class="nav navbar-nav pull-right">
+                                <li class="dropdown pull-right">            
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                                        <i class="fa fa-user"></i> Admin <b class="caret"></b>              
+                                    </a>
+
+                                    <!-- Dropdown menu -->
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
+                                        <li><a href="#"><i class="fa fa-cogs"></i> Settings</a></li>
+                                        <li><a href="login.html"><i class="fa fa-sign-out"></i> Logout</a></li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </br>
+        <!-- Main content starts -->
+
+        <div class="content">
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-dropdown"><a href="#">Navigation</a></div>
+
+                <!--- Sidebar navigation -->
+                <!-- If the main navigation has sub navigation, then add the class "has_sub" to "li" of main navigation. -->
+                <ul id="nav">
+                    <!-- Main menu with font awesome icon -->
+                    <li class="open"><a href="index.html"><i class="fa fa-home"></i> Dashboard</a>
+                        <!-- Sub menu markup 
+                        <ul>
+                          <li><a href="#">Submenu #1</a></li>
+                          <li><a href="#">Submenu #2</a></li>
+                          <li><a href="#">Submenu #3</a></li>
+                        </ul>-->
+                    </li>
+                    <li class="has_sub">
+                        <a href="#"><i class="fa fa-list-alt"></i> Widgets  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+                        <ul>
+                            <li><a href="widgets1.html">Widgets #1</a></li>
+                            <li><a href="widgets2.html">Widgets #2</a></li>
+                            <li><a href="widgets3.html">Widgets #3</a></li>
+                        </ul>
+                    </li>  
+                    <li class="has_sub">
+                        <a href="#"><i class="fa fa-file-o"></i> Pages #1  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+                        <ul>
+                            <li><a href="post.html">Post</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.html">Register</a></li>
+                            <li><a href="support.html">Support</a></li>
+                            <li><a href="invoice.html">Invoice</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li> 
+                    <li class="has_sub">
+                        <a href="#"><i class="fa fa-file-o"></i> Pages #2  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+                        <ul>
+                            <li><a href="media.html">Media</a></li>
+                            <li><a href="statement.html">Statement</a></li>
+                            <li><a href="error.html">Error</a></li>
+                            <li><a href="error-log.html">Error Log</a></li>
+                            <li><a href="calendar.html">Calendar</a></li>
+                            <li><a href="grid.html">Grid</a></li>
+                        </ul>
+                    </li>    
+                    <li class="has_sub"><a href="#"><i class="fa fa-table"></i> Tables  <span class="pull-right"><i class="fa fa-chevron-right"></i></span></a>
+                        <ul>
+                            <li><a href="tables.html">Tables</a></li>
+                            <li><a href="dynamic-tables.html">Dynamic Tables</a></li>
+                        </ul>
+                    </li>		  
+                    <li><a href="charts.html"><i class="fa fa-bar-chart-o"></i> Charts</a></li> 
+                    <li><a href="forms.html"><i class="fa fa-tasks"></i> Forms</a></li>
+                    <li><a href="ui.html"><i class="fa fa-magic"></i> User Interface</a></li>
+                </ul>
+            </div>
+
+            <!-- Sidebar ends -->
+
+            <section layout:fragment="conteudo"></section>
+
+        </div>
+        <!-- Footer starts -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Copyright info -->
+                        <p class="copy">Copyright &copy; 2017 | <a href="#">Prefeitura Municipal de Rio Claro</a> </p>
+                    </div>
+                </div>
+            </div>
+        </footer> 	
+
+        <!-- Footer ends -->
+
+        <!-- Scroll to top -->
+        <span class="totop"><a href="#"><i class="fa fa-chevron-up"></i></a></span> 
+
+        <!-- JS -->
+        <script src="../js/jquery.js"></script> <!-- jQuery -->
+        <script src="../js/bootstrap.min.js"></script> <!-- Bootstrap -->
+        <script src="../js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+        <script src="../js/moment.min.js"></script> <!-- Moment js for full calendar -->
+        <script src="../js/fullcalendar.min.js"></script> <!-- Full Google Calendar - Calendar -->
+        <script src="../js/jquery.rateit.min.js"></script> <!-- RateIt - Star rating -->
+        <script src="../js/jquery.prettyPhoto.js"></script> <!-- prettyPhoto -->
+        <script src="../js/jquery.slimscroll.min.js"></script> <!-- jQuery Slim Scroll -->
+        <script src="../js/jquery.dataTables.min.js"></script> <!-- Data tables -->
+
+        <!-- jQuery Flot -->
+        <script src="../js/excanvas.min.js"></script>
+        <script src="../js/jquery.flot.js"></script>
+        <script src="../js/jquery.flot.resize.js"></script>
+        <script src="../js/jquery.flot.pie.js"></script>
+        <script src="../js/jquery.flot.stack.js"></script>
+
+        <!-- jQuery Notification - Noty -->
+        <script src="../js/jquery.noty.js"></script> <!-- jQuery Notify -->
+        <script src="../js/themes/default.js"></script> <!-- jQuery Notify -->
+        <script src="../js/layouts/bottom.js"></script> <!-- jQuery Notify -->
+        <script src="../js/layouts/topRight.js"></script> <!-- jQuery Notify -->
+        <script src="../js/layouts/top.js"></script> <!-- jQuery Notify -->
+        <!-- jQuery Notification ends -->
+
+        <script src="../js/sparklines.js"></script> <!-- Sparklines -->
+        <script src="../js/jquery.cleditor.min.js"></script> <!-- CLEditor -->
+        <script src="../js/bootstrap-datetimepicker.min.js"></script> <!-- Date picker -->
+        <script src="../js/jquery.onoff.min.js"></script> <!-- Bootstrap Toggle -->
+        <script src="../js/filter.js"></script> <!-- Filter for support page -->
+        <script src="../js/custom.js"></script> <!-- Custom codes -->
+        <script src="../js/charts.js"></script> <!-- Charts & Graphs -->
+
+    </body>
+</html>

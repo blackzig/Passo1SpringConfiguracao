@@ -11,13 +11,14 @@
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-        <project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         
         <spring-framework.version>4.3.7.RELEASE</spring-framework.version>
         <servlet.version>3.1.0</servlet.version>
         <thymeleaf.version>3.0.5.RELEASE</thymeleaf.version>
         <thymeleaf-spring4.version>3.0.5.RELEASE</thymeleaf-spring4.version>
         <hibernate-validator.version>5.4.1.Final</hibernate-validator.version>
+        <thymeleaf-dialect.version>2.2.1</thymeleaf-dialect.version>
                 
     </properties>
     
@@ -78,6 +79,12 @@
             <version>${hibernate-validator.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect -->
+        <dependency>
+            <groupId>nz.net.ultraq.thymeleaf</groupId>
+            <artifactId>thymeleaf-layout-dialect</artifactId>
+            <version>${thymeleaf-dialect.version}</version>
+        </dependency>
 
         
     </dependencies>

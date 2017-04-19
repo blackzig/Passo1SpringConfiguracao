@@ -11,11 +11,11 @@ import org.hibernate.validator.constraints.NotBlank;
  *
  * @author Michel
  */
-public class Recebendo {
+public class ServicosAgenda {
 
     private Long id;
 
-    @NotBlank(message = "O nome é obrigatório")
+    @NotBlank(message = "O nome Ã© obrigatÃ³rio")
     private String nome;
     private String telefone;
     private String celular;

@@ -5,7 +5,7 @@
  */
 package br.com.prefeiturarc.controller;
 
-import br.com.prefeiturarc.model.Recebendo;
+import br.com.prefeiturarc.model.ServicosAgenda;
 import javax.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,25 +19,25 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * @author Michel
  */
 @Controller
-public class RecebendoController {
+public class ServicosAgendaController {
 
-    @RequestMapping("/recebendo/novo")
-    public String novo(Recebendo recebendo) {
-        return "recebendo/CadastroRecebendo";
+    @RequestMapping("/servicos-agenda/novo")
+    public String novo(ServicosAgenda recebendo) {
+        return "servicosagenda/ServicosAgenda";
     }
 
-    @RequestMapping(value = "/recebendo/novo", method = RequestMethod.POST)
-    public String cadastrar(@Valid Recebendo recebendo, BindingResult bindingResult, Model model, RedirectAttributes attributes) {
+    @RequestMapping(value = "/servicos-agenda/novo", method = RequestMethod.POST)
+    public String cadastrar(@Valid ServicosAgenda recebendo, BindingResult bindingResult, Model model, RedirectAttributes attributes) {
         if (bindingResult.hasErrors()) {
             return novo(recebendo);
         }
-        attributes.addFlashAttribute("mensagem", "Salvo com sucesso");
-        return "redirect:/recebendo/novo";
+        attributes.addFlashAttribute("mensagem", "Salvo com sucesso teste");
+        return "redirect:/servicos-agenda/novo";
     }
 
     @RequestMapping("/teste")
-    public String teste(Recebendo recebendo) {
-        return "Teste";
+    public String teste(ServicosAgenda recebendo) {
+        return "Dashboard";
     }
 
 }
